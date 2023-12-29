@@ -3,8 +3,9 @@ from pyquery import PyQuery
 from markdownify import MarkdownConverter
 import requests
 import re
+import sys
 
-WEBHOOK_URL = "https://discord.com/api/webhooks/1190373198345285723/sHuP-N3KPBmaD1MG_bHUIoJoEEogmTb6rhMFc6Eomy8dxSA4EKiEh27ccS6QNrW6AfID"
+WEBHOOK_URL = sys.argv[-1]
 ATLAS_OBSCURA_RANDOM_URL = "https://www.atlasobscura.com/random"
 LINK_EXTRACTOR = re.compile(r'<a href="([^"]+)">')
 
