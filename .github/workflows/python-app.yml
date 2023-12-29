@@ -3,10 +3,10 @@
 
 name: Python application
 
-on: workflow-dispatch
 on:
   schedule:
   - cron: 30 7 * * *
+  workflow-dispatch:
 
 permissions:
   contents: read
