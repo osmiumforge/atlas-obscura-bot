@@ -4,6 +4,7 @@
 name: Python application
 
 on:
+  workflow-dispatch:
   schedule:
   - cron: 30 7 * * *
 
