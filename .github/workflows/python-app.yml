@@ -28,4 +28,4 @@ jobs:
         pip install discord_webhook pyquery markdownify requests
     - name: Run
       run: |
-        python atlas_webhook.py
+        python atlas_webhook.py ${{ secrets.WEBHOOK_URL }}
