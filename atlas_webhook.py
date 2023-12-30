@@ -51,6 +51,12 @@ class ContentProcessor(MarkdownConverter):
 		if not text:
 			return ''
 		href = el.get('href')
+		if href.startswith("http"):
+			pass
+		elif href.startswith("/"):
+			href = "https://www.atlasobscura.com" + href
+		else:
+			href = "https://www.atlasobscura.com/places/" + href
 		title = el.get('title')
 		# For the replacement see #29: text nodes underscores are escaped
 		if (self.options['autolinks']
