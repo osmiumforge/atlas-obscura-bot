@@ -7,14 +7,12 @@ import sys
 
 WEBHOOK_URL = sys.argv[-1]
 ATLAS_OBSCURA_RANDOM_URL = "https://www.atlasobscura.com/random"
-LINK_EXTRACTOR = re.compile(r'<a href="([^"]+)">')
-
 
 webhook = dw.DiscordWebhook(WEBHOOK_URL);
 
 def get_obscura_url():
 	response = requests.get(ATLAS_OBSCURA_RANDOM_URL, allow_redirects=False)
-	url = LINK_EXTRACTOR.search(response.text.replace('\n',"")).group(1)
+	url = response.headers["Location"]
 	return url
 
 
